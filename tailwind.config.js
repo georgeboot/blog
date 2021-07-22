@@ -47,4 +47,7 @@ module.exports = {
             width: ['focus'],
         },
     },
+    plugins: [
+        require('@tailwindcss/typography'),
+    ],
 };
