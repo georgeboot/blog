@@ -1,7 +1,7 @@
 <template>
-    <div class="flex flex-1 justify-end items-center text-right px-4">
+    <div class="flex items-center justify-end flex-1 px-4 text-right">
         <div
-            class="absolute md:relative w-full justify-end bg-white left-0 top-0 z-10 mt-7 md:mt-0 px-4 md:px-0"
+            class="absolute top-0 left-0 z-10 justify-end w-full px-4 bg-white md:relative mt-7 md:mt-0 md:px-0"
             :class="{'hidden md:flex': ! searching}"
         >
             <label for="search" class="hidden">Search</label>
@@ -10,7 +10,7 @@
                 id="search"
                 v-model="query"
                 ref="search"
-                class="transition-fast relative block h-10 w-full lg:w-1/2 lg:focus:w-3/4 bg-gray-100 border border-gray-500 focus:border-blue-400 outline-none cursor-pointer text-gray-700 px-4 pb-0 pt-px"
+                class="relative block w-full h-10 px-4 pt-px pb-0 text-gray-700 transition-all duration-200 ease-out bg-gray-100 border border-gray-500 outline-none cursor-pointer lg:w-1/2 lg:focus:w-3/4 focus:border-blue-400"
                 :class="{ 'transition-border': query }"
                 autocomplete="off"
                 name="search"
@@ -22,16 +22,16 @@
 
             <button
                 v-if="query || searching"
-                class="absolute top-0 right-0 leading-snug font-400 text-3xl text-blue-500 hover:text-blue-600 focus:outline-none pr-7 md:pr-3"
+                class="absolute top-0 right-0 text-3xl leading-snug text-blue-500 font-400 hover:text-blue-600 focus:outline-none pr-7 md:pr-3"
                 @click="reset"
             >&times;</button>
 
             <transition name="fade">
-                <div v-if="query" class="absolute left-0 right-0 md:inset-auto w-full lg:w-3/4 text-left mb-4 md:mt-10">
-                    <div class="flex flex-col bg-white border border-b-0 border-t-0 border-blue-400 rounded-b-lg shadow-lg mx-4 md:mx-0">
+                <div v-if="query" class="absolute left-0 right-0 w-full mb-4 text-left md:inset-auto lg:w-3/4 md:mt-10">
+                    <div class="flex flex-col mx-4 bg-white border border-t-0 border-b-0 border-blue-400 rounded-b-lg shadow-search md:mx-0">
                         <a
                             v-for="(result, index) in results"
-                            class="bg-white hover:bg-blue-100 border-b border-blue-400 text-xl cursor-pointer p-4"
+                            class="p-4 text-xl bg-white border-b border-blue-400 cursor-pointer hover:bg-blue-100"
                             :class="{ 'rounded-b-lg': (index === results.length - 1) }"
                             :href="result.item.link"
                             :title="result.item.title"
@@ -40,12 +40,12 @@
                         >
                             {{ result.item.title }}
 
-                            <span class="block font-normal text-gray-700 text-sm my-1" v-html="result.item.snippet"></span>
+                            <span class="block my-1 text-sm font-normal text-gray-700" v-html="result.item.snippet"></span>
                         </a>
 
                         <div
                             v-if="! results.length"
-                            class="bg-white w-full hover:bg-blue-100 border-b border-blue-400 rounded-b-lg shadow cursor-pointer p-4"
+                            class="w-full p-4 bg-white border-b border-blue-400 rounded-b-lg shadow cursor-pointer hover:bg-blue-100"
                         >
                             <p class="my-0">No results for <strong>{{ query }}</strong></p>
                         </div>
@@ -57,10 +57,10 @@
         <button
             title="Start searching"
             type="button"
-            class="flex md:hidden bg-gray-100 hover:bg-blue-100 justify-center items-center border border-gray-500 rounded-full focus:outline-none h-10 px-3"
+            class="flex items-center justify-center h-10 px-3 bg-gray-100 border border-gray-500 rounded-full md:hidden hover:bg-blue-100 focus:outline-none"
             @click.prevent="showInput"
         >
-            <img src="/assets/img/magnifying-glass.svg" alt="search icon" class="h-4 w-4 max-w-none">
+            <img src="/assets/img/magnifying-glass.svg" alt="search icon" class="w-4 h-4 max-w-none">
         </button>
     </div>
 </template>
