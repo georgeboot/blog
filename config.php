@@ -5,14 +5,14 @@ use Illuminate\Support\Str;
 return [
     'baseUrl' => '',
     'production' => false,
-    'siteName' => 'Blogh',
+    'siteName' => 'George Boot',
     'siteDescription' => 'Everything and what not',
-    'siteAuthor' => 'Jaco van den Bergh',
+    'siteAuthor' => 'George Boot',
 
     // collections
     'collections' => [
         'posts' => [
-            'author' => 'Jaco van den Bergh', // Default author, if not provided in a post
+            'author' => 'George Boot', // Default author, if not provided in a post
             'sort' => '-date',
             'path' => 'blog/{filename}',
         ],

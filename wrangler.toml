@@ -1,9 +1,10 @@
-name = "blogh"
+name = "blog"
 type = "webpack"
-route = 'blogh.bergh.tech/*'
-zone_id = '1137d90343004568a003507c76c75e40'
-account_id = "4a483ef8336e67807dd8c00ed6a981ff"
-usage_model = ''
+account_id = "21decfb80266c1f3f49a9570a6535c44"
+
+# routing
+zone_id = '1115eb69e189f134d9ee5289d715c86e'
+route = 'georgeboot.nl/*'
 workers_dev = false
 
 [site]
