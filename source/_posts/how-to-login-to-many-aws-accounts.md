@@ -19,11 +19,11 @@ Unfortunately, AWS does not support this behaviour. Yes, AWS allows you to creat
 ## IAM Assumed Roles
 Meet IAM Assumed Roles. IAM Assumed *what*? Exactly, that was my first reaction as well. The concept is actually pretty simple, so let me explain.
 
-The whole concept revolves around pretending to be someone, yet officially still being someone else. Some admin panels give admins the options to log-in as a user to debug something. This is basically that. You log-in using *Account 1*, but should be treated as if you are *Account 2*.
+The whole concept revolves around pretending to be someone, yet officially still being someone else. Some admin panels give admins the options to log-in as a user to debug something. Assumed Roles are basically that. You log-in using *Account 1*, but should be treated as if you are *Account 2*.
 
 AWS calls this concept *Assumed Roles* and they are part of IAM. Where in most of these admin systems a flag like `pretend_to_be_user_id` will be added to your session, AWS calls this `assumed_role`. And instead of putting the user account in there, AWS store the role.
 
-This last part is actually quite important in practise: your user ID always remains the same, so audit logs will always show your user name. Only the permissions of your account are temporarily changed. See why AWS named it *Assumed* roles? You are basically instructing the systems to *assume* you have a specific role.
+This last part is actually quite important in practise: your user ID always remains the same, so audit logs will always show your user name. **Only the permissions** of your account are temporarily changed. See why AWS named it *Assumed* roles? You are basically instructing the systems to *assume* you have a specific role.
 
 ## Set up your own
 Convinced yet? Let's go though the process of setting this up together. It should take 2-3 minutes per account and can easily be undone.
@@ -45,19 +45,21 @@ To add a new role, follow these steps:
 4. On the tags tab, add tags if you want
 5. On the review tab, give the role a kebab-case name. You will need this name later.
 
+You need to run the above steps for each `Secondary Account` you want to have access to.
+
 ### Using the role
 Now that we have the role created, we can start using it from our `Primary Account`.
 
 1. Make sure you are logged in to your `Primary Account`
 2. Click on your name in the top-right of your screen and select `Switch Roles`
-3. Enter the `Account ID` of the account you want to access
-4. Enter the role name you picked when setting up the role
+3. Enter the `Account ID` of the secondary account you want to access
+4. Enter the role name you picked when setting up it's role
 5. Optionally, give the role a display name and/or a colour
 6. Click `Switch Role`
 
 You should now be logged in as the secondary account you selected. Or to be more precise, AWS added the role you provided as an *assumed role* to your session.
 
-Once you are done, you can simply click `Back to {your user name}` in the same menu.
+Once you are done, you can simply click `Back to {your user name}` in the same menu. You are now once again logged in only to your primary account.
 
 ## Hot tip: use bookmarks
 If you have quite a couple of AWS accounts to take care of (like me) I've found that it is super handy to add bookmarks to all the roles. AWS doesn't really document this feature, but it works nevertheless.
