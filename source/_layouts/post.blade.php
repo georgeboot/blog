@@ -5,27 +5,33 @@
 @endphp
 
 @section('body')
-    @if ($page->cover_image)
-        <img src="{{ $page->cover_image }}" alt="{{ $page->title }} cover image" class="mb-2">
-    @endif
+    <article class="pb-4 mx-auto mb-10 prose border-b border-blue-200 lg:prose-lg">
+        <header>
+            @if ($page->cover_image)
+                <img src="{{ $page->cover_image }}" alt="{{ $page->title }} cover image" class="mb-2">
+            @endif
 
-    <h1 class="leading-none mb-2">{{ $page->title }}</h1>
+            <h1>{{ $page->title }}</h1>
 
-    <p class="text-gray-700 text-xl md:mt-0">{{ $page->author }}  •  {{ date('F j, Y', $page->date) }}</p>
+            <p> 
+                <address class="inline">{{ $page->author }}</address>  •  <time class="inline" datetime="{{ date('Y-m-d', $page->date) }}">{{ date('F j, Y', $page->date) }}</time>
+            </p>
 
-    @if ($page->categories)
-        @foreach ($page->categories as $i => $category)
-            <a
-                href="{{ '/blog/categories/' . $category }}"
-                title="View posts in {{ $category }}"
-                class="inline-block bg-gray-300 hover:bg-blue-200 leading-loose tracking-wide text-gray-800 uppercase text-xs font-semibold rounded mr-4 px-3 pt-px"
-            >{{ $category }}</a>
-        @endforeach
-    @endif
+            @if ($page->categories)
+                @foreach ($page->categories as $i => $category)
+                    <a
+                        href="{{ '/blog/categories/' . $category }}"
+                        title="View posts in {{ $category }}"
+                        class="inline-block px-3 pt-px mr-4 text-xs font-semibold leading-loose tracking-wide text-gray-800 uppercase bg-gray-300 rounded hover:bg-blue-200"
+                    >{{ $category }}</a>
+                @endforeach
+            @endif
+        </header>
 
-    <div class="border-b border-blue-200 mb-10 pb-4" v-pre>
-        @yield('content')
-    </div>
+        <div class="" v-pre>
+            @yield('content')
+        </div>
+    </article>
 
     <nav class="flex justify-between text-sm md:text-base">
         <div>

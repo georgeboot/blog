@@ -1,11 +1,10 @@
 @extends('_layouts.master')
 
 @section('body')
-    <h1>{{ $page->title }}</h1>
-
-    <div class="pb-10 mb-6 text-2xl border-b border-blue-200">
+    <article class="pb-4 mx-auto mb-10 prose border-b border-blue-200 max-w-none lg:prose-lg">
+        <h1>{{ $page->title }}</h1>
         @yield('content')
-    </div>
+    </article>
 
     @foreach ($page->posts($posts) as $post)
         @include('_components.post-preview-inline')
