@@ -63,8 +63,8 @@ Once you are done, you can simply click `Back to {your user name}` in the same m
 If you have quite a couple of AWS accounts to take care of (like me) I've found that it is super handy to add bookmarks to all the roles. AWS doesn't really document this feature, but it works nevertheless.
 
 I have the following bookmarks set-up:
-1. Log in to AWS: https://signin.aws.amazon.com/console (alternatively you can use https://{your-primary-account-id}.signin.aws.amazon.com/console to pre-fill the account ID)
-2. AWS Role: Secondary Account 1: https://signin.aws.amazon.com/switchrole?account={secondary-account-1-id}&roleName={secondary-account-1-role-name}&displayName=SecondaryAccount1
-2. AWS Role: Secondary Account 2: https://signin.aws.amazon.com/switchrole?account={secondary-account-2-id}&roleName={secondary-account-2-role-name}&displayName=SecondaryAccount2
-3. AWS Role: Secondary Account 3: https://signin.aws.amazon.com/switchrole?account={secondary-account-3-id}&roleName={secondary-account-3-role-name}&displayName=SecondaryAccount3
+1. Log in to AWS: `https://signin.aws.amazon.com/console` (alternatively you can use `https://{your-primary-account-id}.signin.aws.amazon.com/console` to pre-fill the account ID)
+2. AWS Role: Secondary Account 1: `https://signin.aws.amazon.com/switchrole?account={secondary-account-1-id}&roleName={secondary-account-1-role-name}&displayName=SecondaryAccount1`
+2. AWS Role: Secondary Account 2: `https://signin.aws.amazon.com/switchrole?account={secondary-account-2-id}&roleName={secondary-account-2-role-name}&displayName=SecondaryAccount2`
+3. AWS Role: Secondary Account 3: `https://signin.aws.amazon.com/switchrole?account={secondary-account-3-id}&roleName={secondary-account-3-role-name}&displayName=SecondaryAccount3`
 4. Etc.
