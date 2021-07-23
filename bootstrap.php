@@ -16,3 +16,24 @@
 
 $events->afterBuild(App\Listeners\GenerateSitemap::class);
 $events->afterBuild(App\Listeners\GenerateIndex::class);
+
+
+$container->singleton('markdownParser', function ($c) {
+    return new class extends TightenCo\Jigsaw\Parsers\MarkdownParser {
+        /** @var \League\CommonMark\CommonMarkConverter */
+        public $parser;
+
+        public function __construct()
+        {
+            $this->parser = new \League\CommonMark\CommonMarkConverter([
+                'html_input' => 'strip',
+                'allow_unsafe_links' => false,
+            ]);
+        }
+        
+        public function parse($text)
+        {
+            return $this->parser->convertToHtml($text);
+        }
+    };
+});

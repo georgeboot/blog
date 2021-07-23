@@ -15,6 +15,7 @@ mix.jigsaw()
     .browserSync({
         server: 'build_local',
         files: ['build_local/**'],
+        open: false,
     })
     .sourceMaps()
     .version();
