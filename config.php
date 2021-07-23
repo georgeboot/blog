@@ -35,6 +35,10 @@ return [
             return $page->excerpt;
         }
 
+        if ($page->description) {
+            return $page->description;
+        }
+
         $content = preg_split('/<!-- more -->/m', $page->getContent(), 2);
         $cleaned = trim(
             strip_tags(

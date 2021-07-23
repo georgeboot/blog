@@ -1,7 +1,7 @@
 ---
 extends: _layouts.post
 section: content
-title: How to login to multiple AWS accounts without getting crazy
+title: How to login to multiple AWS accounts without going crazy
 author: George Boot
 date: 2021-07-23
 description: In this blog post I will explain a super handy technique on how to organise access to multiple AWS accounts.
@@ -22,7 +22,7 @@ In IAM, add a role:
 
 Now to use the role from your primary account:
 - Make sure you are logged in to your primary account
-- Click at your name on the top-right of your screen and select `Switch Roles`
+- Click on your name in the top-right of your screen and select `Switch Roles`
 - Enter the `Account ID` of the account you want to access
 - Enter the role name you picked when setting up the role
 - Optionally, give the role a display name and/or a colour
@@ -30,6 +30,6 @@ Now to use the role from your primary account:
 
 To make the above easier, I made bookmarks to all of them.
 
-When I need to access any of my accounts, I login the the AWS console to my primary account, and click one of the bookmarks.
+When I need to access any of my accounts, I login to the AWS console to my primary account, and click one of the bookmarks.
 
 A typical bookmark url will be: `https://signin.aws.amazon.com/switchrole?account={ACCOUNT_ID}}&roleName={ROLE_NAME}&displayName={DISPLAY_NAME}`.
