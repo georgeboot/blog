@@ -37,6 +37,9 @@ In the next steps we are going to create an access structure so that your `Prima
 
 Lastly, you are going to know the ****Account ID**s of the accounts involved. You can find them by loggin in to the account and clicking on your name in the top-right of your screen. Your account ID labelled as *My Account**.
 
+#### Note: root account not supported
+Note that you need to have an IAM user on your Primary Account. The below procedure doesn't work with root account. You should anyway not use your root account for day-to-day stuff, so if you aren't using an IAM user yet, this might be the perfect time to start doing so.
+
 ### Adding a role
 Log in to (one of) your `Secondary Account`, and go to the IAM service. Once there, select the *Roles* tab on the left.
 
