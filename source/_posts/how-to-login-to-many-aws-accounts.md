@@ -1,7 +1,7 @@
 ---
 extends: _layouts.post
 section: content
-title: How to login to multiple AWS accounts without going crazy
+title: How to login to multiple AWS accounts using one primary account
 author: George Boot
 date: 2021-07-23
 description: In this blog post I will explain a super handy technique on how to organise access to multiple AWS accounts.
