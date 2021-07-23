@@ -4,7 +4,7 @@ section: content
 title: How to login to multiple AWS accounts using one primary account
 author: George Boot
 date: 2021-07-23
-description: In this blog post I will explain a super handy technique on how to organise access to multiple AWS accounts.
+description: In this blog post I will explain a super handy technique on how to organise access to multiple AWS accounts using one primary account.
 categories: [tech]
 featured: true
 ---
@@ -35,6 +35,8 @@ Let's pick our `Primary Account`. For me personally, this is my personal AWS acc
 
 In the next steps we are going to create an access structure so that your `Primary Account` has access to one or multiple `Secondary Accounts`.
 
+Lastly, you are going to know the ****Account ID**s of the accounts involved. You can find them by loggin in to the account and clicking on your name in the top-right of your screen. Your account ID labelled as *My Account**.
+
 ### Adding a role
 Log in to (one of) your `Secondary Account`, and go to the IAM service. Once there, select the *Roles* tab on the left.
 
@@ -44,6 +46,7 @@ To add a new role, follow these steps:
 3. Go to the permissions, and select `Administrator Access` (or more restricted permissions if you prefer, but this will be the easiest)
 4. On the tags tab, add tags if you want
 5. On the review tab, give the role a kebab-case name. You will need this name later.
+6. Once the role is created, open it up and copy the url ("Give this link to users who can switch roles in the console") as you will also need it later.
 
 You need to run the above steps for each `Secondary Account` you want to have access to.
 
@@ -51,11 +54,9 @@ You need to run the above steps for each `Secondary Account` you want to have ac
 Now that we have the role created, we can start using it from our `Primary Account`.
 
 1. Make sure you are logged in to your `Primary Account`
-2. Click on your name in the top-right of your screen and select `Switch Roles`
-3. Enter the `Account ID` of the secondary account you want to access
-4. Enter the role name you picked when setting up it's role
-5. Optionally, give the role a display name and/or a colour
-6. Click `Switch Role`
+2. Paste the URL you copied in step 6 of the adding process in your browser
+3. Optionally, give the role a display name and/or a colour
+4. Click `Switch Role`
 
 You should now be logged in as the secondary account you selected. Or to be more precise, AWS added the role you provided as an *assumed role* to your session.
 
