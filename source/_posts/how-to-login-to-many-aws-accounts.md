@@ -11,6 +11,8 @@ featured: true
 
 Pick your 'primary' AWS account. I use my personal one (side projects etc)
 
+Now for each AWS you want to have easy access to (let's call them secondary accounts), login to the account and do the following:
+
 In IAM, add a role:
 - Select `another AWS account` as the type of trusted entity.
 - Fill in the `Account ID` of your primary AWS account
@@ -18,7 +20,8 @@ In IAM, add a role:
 - On the tags tab, add tags if you want
 - On the review tab, give the role a kebab-case name. You will need this name later.
 
-Now to use the role:
+Now to use the role from your primary account:
+- Make sure you are logged in to your primary account
 - Click at your name on the top-right of your screen and select `Switch Roles`
 - Enter the `Account ID` of the account you want to access
 - Enter the role name you picked when setting up the role
@@ -27,6 +30,6 @@ Now to use the role:
 
 To make the above easier, I made bookmarks to all of them.
 
-When I need to access any of my accounts, I login the the AWS console, and click one of the bookmarks.
+When I need to access any of my accounts, I login the the AWS console to my primary account, and click one of the bookmarks.
 
 A typical bookmark url will be: `https://signin.aws.amazon.com/switchrole?account={ACCOUNT_ID}}&roleName={ROLE_NAME}&displayName={DISPLAY_NAME}`.
