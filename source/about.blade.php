@@ -1,5 +1,5 @@
 ---
-title: About George Boot
+title: About Me
 description: Who is George Boot?
 ---
 @extends('_layouts.master')
