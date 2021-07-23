@@ -12,7 +12,7 @@ description: Who is George Boot?
         class="flex w-64 h-64 mx-auto my-6 bg-contain rounded-full md:float-right md:ml-10">
 
     <p class="mb-6">I've been developing software since I was 12. After I had bought my first PHP book, I quickly started to dig deeper into this programming thing.<br>I started using Laravel a few days after version 4 got released.</p>
-    <p class="mb-6">Nowdays I spend my days working on a wide range of projects. My day job is developer at <a target="_blank" href="https://www.entryninja.com">Entry Ninnja</a>. After hours, I run a gym subscription management platform called <a target="_blank" href="https://gymme.nl">Gymme</a>.</p>
+    <p class="mb-6">Nowdays I spend my days working on a wide range of projects. My day job is developer at <a target="_blank" href="https://www.entryninja.com">Entry Ninja</a>. After hours, I run a gym subscription management platform called <a target="_blank" href="https://gymme.nl">Gymme</a>.</p>
     <p class="mb-6">Oh and I live in Veenendaal, The Netherlands.</p>
 
     <h3>My setup</h3>
