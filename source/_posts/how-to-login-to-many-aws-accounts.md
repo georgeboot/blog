@@ -23,7 +23,7 @@ The whole concept revolves around pretending to be someone, yet officially still
 
 AWS calls this concept *Assumed Roles* and they are part of IAM. Where in most of these admin systems a flag like `pretend_to_be_user_id` will be added to your session, AWS calls this `assumed_role`. And instead of putting the user account in there, AWS store the role.
 
-This last part is actually quite important in practise: you user always remains the same (so audit logs will always show your user name) but only the permissions change.
+This last part is actually quite important in practise: your user ID always remains the same, so audit logs will always show your user name. Only the permissions of your account are temporarily changed. See why AWS named it *Assumed* roles? You are basically instructing the systems to *assume* you have a specific role.
 
 ## Set up your own
 Convinced yet? Let's go though the process of setting this up together. It should take 2-3 minutes per account and can easily be undone.
@@ -31,7 +31,7 @@ Convinced yet? Let's go though the process of setting this up together. It shoul
 ### Primary account
 First of, let's establish some important names, otherwise we will still go crazy ;-)
 
-Let's pick our `Primary Account`. For me personally, this is my personal AWS account. This will be the account you always login to and will be used to access te other accounts.
+Let's pick our `Primary Account`. For me personally, this is my personal AWS account. This will be the account you always login to and will be used to access the other accounts.
 
 In the next steps we are going to create an access structure so that your `Primary Account` has access to one or multiple `Secondary Accounts`.
 
