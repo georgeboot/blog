@@ -1,11 +1,11 @@
 import hljs from 'highlight.js/lib/core'
 import Alpine from 'alpinejs'
+import search from './search'
 
-import Search from './search'
-window.Search = Search
-
-// start alpine
 window.Alpine = Alpine
+
+// Alpine
+Alpine.data('search', search)
 Alpine.start()
 
 // Syntax highlighting
