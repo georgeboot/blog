@@ -41,7 +41,7 @@
                 </div>
 
                 <div id="vue-search" class="flex items-center justify-end flex-1">
-                    <div x-data="Search" class="flex items-center justify-end flex-1 px-4 text-right">
+                    <div x-data="search" class="flex items-center justify-end flex-1 px-4 text-right">
                         <div
                             class="absolute top-0 left-0 z-10 justify-end w-full px-4 bg-white md:relative mt-7 md:mt-0 md:px-0"
                             :class="{ 'hidden md:flex': ! searching }"
