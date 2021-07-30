@@ -1,24 +1,9 @@
----
-extends: _layouts.post
-section: content
-title: Hosting a Jigsaw static site for free using Cloudflare Workers
-author: Jaco van den Bergh
-date: 2021-07-22
-description: My colleague Jaco van den Bergh wrote an excellent article on how to host Jigsaw sites for free on Cloudflare Workers.
-categories: [tech]
-cover_image: /assets/img/jigsaw-on-cloudflare-transparent.png
-featured: true
----
+<?php
 
-My colleague [Jaco van den Bergh](https://blogh.bergh.tech/about) wrote an excellent article on how to host Jigsaw sites for free on Cloudflare Workers.
-
-[Hosting a Jigsaw site on Cloudflare for free &raquo;](https://blogh.bergh.tech/blog/hosting-jigsaw-on-cloudflare)
-
-```php
 return [
     // Which theme you want to use. You can find all of the themes at
     // https://torchlight.dev/themes, or you can provide your own.
-    'theme' => 'light-plus',
+    'theme' => 'min-light',
 
     // Your API token from torchlight.dev. You can set it as an ENV variable
     // (shown below), or just hardcode it if your repo is private.
@@ -61,4 +46,3 @@ return [
         // 'summaryCollapsedIndicator' => '...',
     ]
 ];
-```
