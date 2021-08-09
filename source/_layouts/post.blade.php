@@ -33,6 +33,17 @@
         </div>
     </article>
 
+    <div class="pb-4 mb-10 border-b border-blue-200">
+        <script src="https://utteranc.es/client.js"
+            repo="georgeboot/blog"
+            issue-term="pathname"
+            label="comment"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+        </script>
+    </div>
+
     <nav class="flex justify-between text-sm md:text-base">
         <div>
             @if ($next = $page->getNext())
