@@ -7,7 +7,7 @@ date: 2021-07-22
 description: My colleague Jaco van den Bergh wrote an excellent article on how to host Jigsaw sites for free on Cloudflare Workers.
 categories: [tech]
 cover_image: /assets/img/jigsaw-on-cloudflare-transparent.png
-featured: true
+featured: false
 ---
 
 My colleague [Jaco van den Bergh](https://blogh.bergh.tech/about) wrote an excellent article on how to host Jigsaw sites for free on Cloudflare Workers.

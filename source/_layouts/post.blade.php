@@ -33,7 +33,7 @@
         </div>
     </article>
 
-    <div class="pb-4 mb-10 border-b border-blue-200">
+    <div class="pb-4 mb-10 border-b border-blue-200" id="comments">
         <script src="https://utteranc.es/client.js"
             repo="georgeboot/blog"
             issue-term="pathname"
