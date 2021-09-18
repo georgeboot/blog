@@ -15,6 +15,17 @@
         @endif
         <title>{{ $page->title ?  $page->title . ' | ' : '' }}{{ $page->siteName }}</title>
 
+        @if ($page->type === 'article')
+        <!-- twitter -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@georgeboot">
+        <meta name="twitter:title" content="{{ $page->title }}">
+        <meta name="twitter:description" content="{{ $page->description ?? $page->siteDescription }}">
+        @if ($page->cover_image)
+        <meta name="twitter:image" content="{{ $page->baseUrl }}{{ $page->cover_image }}">
+        @endif
+        @endif
+
         <link rel="home" href="{{ $page->baseUrl }}">
         <link rel="icon" href="/favicon.ico">
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
