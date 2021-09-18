@@ -48,6 +48,8 @@ All developers want in the end, is a simple copy/paste solution. I am pleased to
 - Replace `DATABASE_NAME` with the name of your database as configured in Vapor, eg. `my-app-db`
 - Replace `API_GATEWAY_ID` with the ID of your projects API gateway. You can find this using the AWS Console. Example: `yuttpf0t41`
 
+Note that the dashboard is made for API Gateway users. If you use a Application Elastic Load Balancer, an example is provided below the main json.
+
 Once you have prepared the json in your editor of choice, head to the AWS Console to import the dashboard.
 
 - After logging in, go to **Cloudwatch**, and in the menu of the left, select **Dashboards**
@@ -666,3 +668,23 @@ The dashboard json:
     ]
 }
 ```
+
+Application Elastic Load Balancer example snippet:
+```json
+{
+    "view": "timeSeries",
+    "stacked": false,
+    "metrics": [
+        [ "AWS/ApplicationELB", "ProcessedBytes", "LoadBalancer", "app/AELB_NAME" ],
+        [ ".", "LambdaTargetProcessedBytes", ".", "." ]
+    ],
+    "region": "PROJECT_REGION",
+    "title": "Application ELB",
+    "period": 300,
+    "legend": {
+        "position": "hidden"
+    }
+}
+```
+
+Make sure to replace `AELB_NAME` with the instance name of your AELB.
