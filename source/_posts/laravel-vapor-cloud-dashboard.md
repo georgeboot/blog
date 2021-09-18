@@ -1,7 +1,7 @@
 ---
 extends: _layouts.post
 section: content
-title: Laravel Vapor cloud dashboard
+title: Laravel Vapor cloud dashboard using only Cloudwatch
 author: George Boot
 date: 2021-09-17
 description: In a recent blogpost, Michael Dyrynda showed his Vapor dashboard built using Grafana. I re-created the dash using Cloudwatch.
