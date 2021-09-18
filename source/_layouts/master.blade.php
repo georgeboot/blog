@@ -10,7 +10,9 @@
         <meta property="og:type" content="{{ $page->type ?? 'website' }}" />
         <meta property="og:url" content="{{ $page->getUrl() }}"/>
         <meta property="og:description" content="{{ $page->description ?? $page->siteDescription }}" />
-
+        @if ($page->cover_image)
+        <meta property="og:image" content="{{ $page->baseUrl }}{{ $page->cover_image }}"/>
+        @endif
         <title>{{ $page->title ?  $page->title . ' | ' : '' }}{{ $page->siteName }}</title>
 
         <link rel="home" href="{{ $page->baseUrl }}">
